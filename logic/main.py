@@ -71,12 +71,12 @@ class Main(QMainWindow):
         self.shapes_color = "#00CDFF"
         self.points_color = "#00CDFF"
         
-        self.updateUi()
-        self.update_plot_window()
-        
         self.my_canvas = PlotSquare(self, face_color=self.shapes_color, width=2, height=2)
         self.my_canvas.setGeometry(420, 130, 351, 300)
         self.my_canvas.hide()
+        
+        self.updateUi()
+        self.update_plot_window()
         
         # open windows
         self.settings_button.clicked.connect(self.settings_open)
@@ -98,8 +98,6 @@ class Main(QMainWindow):
         self.graph_save_button.clicked.connect(self.save)
         self.graph_clear_values_button.clicked.connect(self.clear_plot_values)
         self.math_symbols_window_button.clicked.connect(self.math_symbols_window_logic)
-        self.reset_settings_button.clicked.connect(self.reset_settings)
-        self.settings_save_button.clicked.connect(self.save_settings)
 
         self.login_create_account_button.clicked.connect(self.signup_open)
         
@@ -792,10 +790,10 @@ class Main(QMainWindow):
         ax.axis("off")
         ax.text(-1, 0.795, output, fontsize=14, ha="left", va="top", fontname="Arial")
 
-        plt.savefig("temp.png", bbox_inches="tight", pad_inches=0.1)
+        plt.savefig("uis/design/temp_files/temp.png", bbox_inches="tight", pad_inches=0.1)
         plt.close(fig)
 
-        self.pixmap = QPixmap("temp.png")
+        self.pixmap = QPixmap("uis/design/temp_files/temp.png")
         self.equation_answer_output.setPixmap(self.pixmap)
 
         self.equation_answer_scroll_slider.setMaximum(self.pixmap.width())
@@ -1049,10 +1047,10 @@ class Main(QMainWindow):
         ax.axis("off")
         ax.text(-1, 0.665, output, fontsize=14, ha="left", va="top", fontname="Arial")
 
-        plt.savefig("temp.png", bbox_inches="tight", pad_inches=0.1)
+        plt.savefig("uis/design/temp_files/temp.png", bbox_inches="tight", pad_inches=0.1)
         plt.close(fig)
 
-        self.pixmap = QPixmap("temp.png")
+        self.pixmap = QPixmap("uis/design/temp_files/temp.png")
         self.stats_calculator_answer_output.setPixmap(self.pixmap)
 
     def solve_shape_calcs(self) -> None:
@@ -1087,10 +1085,10 @@ class Main(QMainWindow):
         ax.axis("off")
         ax.text(-1, 0.665, output, fontsize=14, ha="left", va="top", fontname="Arial")
 
-        plt.savefig("temp.png", bbox_inches="tight", pad_inches=0.1)
+        plt.savefig("uis/design/temp_files/temp.png", bbox_inches="tight", pad_inches=0.1)
         plt.close(fig)
 
-        self.pixmap = QPixmap("temp.png")
+        self.pixmap = QPixmap("uis/design/temp_files/temp.png")
         self.shape_calcs_output.setPixmap(self.pixmap)
 
     def hide_canvases(self) -> None:
@@ -1099,44 +1097,6 @@ class Main(QMainWindow):
         
         if hasattr(self, "canvas_2d"):
             self.my_canvas.hide()
-    
-    def reset_settings(self) -> None:
-        self.theme = 0
-        self.shapes_color = "#00CDFF"
-        self.graph_lines_thickness = 5
-        self.points_color = "#00CDFF"
-        self.graph_points_thickness = 55
-
-        if self.logged_in:
-            self.database.set_settings(
-                user_id=self.user_id,
-                theme=self.theme,
-                shapes_color=self.shapes_color,
-                graph_lines_thickness=self.graph_lines_thickness,
-                points_color=self.points_color,
-                graph_points_thickness=self.graph_points_thickness,
-                graph_type=0
-            )
-
-        self.updateUi()
-        self.update_plot_window()
-        
-        if hasattr(self, 'graph_canvas'):
-            self.graph_canvas.plot_graph()
-
-    def save_settings(self) -> None:
-        if self.logged_in:
-            self.database.set_settings(
-                user_id=self.user_id,
-                theme=self.settings_theme_choose.currentIndex(),
-                shapes_color=self.shapes_color,
-                graph_lines_thickness=self.graph_lines_thickness,
-                points_color=self.points_color,
-                graph_points_thickness=self.graph_points_thickness,
-                graph_type=0
-            )
-            
-        self.update_plot_window()
 
     def load_settings(self) -> None:
         settings = self.database.get_settings(user_id=self.user_id)

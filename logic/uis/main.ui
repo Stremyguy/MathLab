@@ -993,6 +993,39 @@ calculator</string>
        <bold>false</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QTableView {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    gridline-color: #ddd;
+}
+
+QTableView::item {
+    border: none;
+    padding: 5px;
+}
+
+QTableView::item:selected {
+    background-color: #75a7ff;
+    color: white;
+    border-radius: 5px;
+}
+
+QHeaderView::section {
+    background-color: #eaeaea;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+QTableCornerButton::section {
+    background-color: #eaeaea;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}</string>
+     </property>
      <property name="verticalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOn</enum>
      </property>
@@ -1413,6 +1446,17 @@ QComboBox::down-arrow {
 QComboBox:focus {
 	border-radius: 10px;
 	border: 2px solid rgb(255, 166, 23);
+}
+
+QComboBox QAbstractItemView {
+    selection-background-color: #75a7ff;
+    selection-color: white;
+    border: 1px solid black;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #75a7ff;
+    color: black;
 }</string>
      </property>
      <item>
@@ -1461,6 +1505,17 @@ QComboBox::down-arrow {
 QComboBox:focus {
 	border-radius: 10px;
 	border: 2px solid rgb(255, 166, 23);
+}
+
+QComboBox QAbstractItemView {
+    selection-background-color: #75a7ff;
+    selection-color: white;
+    border: 1px solid black;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #75a7ff;
+    color: black;
 }</string>
      </property>
      <item>
@@ -1548,6 +1603,39 @@ QComboBox:focus {
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QTableView {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    gridline-color: #ddd;
+}
+
+QTableView::item {
+    border: none;
+    padding: 5px;
+}
+
+QTableView::item:selected {
+    background-color: #75a7ff;
+    color: white;
+    border-radius: 5px;
+}
+
+QHeaderView::section {
+    background-color: #eaeaea;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+QTableCornerButton::section {
+    background-color: #eaeaea;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}</string>
      </property>
      <property name="verticalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOn</enum>
@@ -2783,81 +2871,6 @@ QPushButton:pressed {
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QFrame" name="settings_save_button_frame">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>560</y>
-       <width>200</width>
-       <height>50</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>200</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>200</width>
-       <height>50</height>
-      </size>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_21">
-      <item>
-       <widget class="QPushButton" name="settings_save_button">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>300</width>
-          <height>35</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>14</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	border-radius: 10px;
-	background: rgb(0, 205, 255);
-}
-
-QPushButton:pressed {
-	background:rgb(0, 203, 14);
-	
-}</string>
-        </property>
-        <property name="text">
-         <string>Save</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
     <widget class="QComboBox" name="settings_theme_choose">
      <property name="geometry">
       <rect>
@@ -2893,6 +2906,17 @@ QComboBox::down-arrow {
 QComboBox:focus {
 	border-radius: 10px;
 	border: 2px solid rgb(255, 166, 23);
+}
+
+QComboBox QAbstractItemView {
+    selection-background-color: #75a7ff;
+    selection-color: white;
+    border: 1px solid black;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #75a7ff;
+    color: black;
 }</string>
      </property>
      <item>
@@ -2960,78 +2984,6 @@ QComboBox:focus {
         </property>
         <property name="text">
          <string>Theme:</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QFrame" name="settings_reset_button_frame">
-     <property name="geometry">
-      <rect>
-       <x>560</x>
-       <y>560</y>
-       <width>200</width>
-       <height>50</height>
-      </rect>
-     </property>
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>200</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>200</width>
-       <height>50</height>
-      </size>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_23">
-      <item>
-       <widget class="QPushButton" name="reset_settings_button">
-        <property name="maximumSize">
-         <size>
-          <width>300</width>
-          <height>35</height>
-         </size>
-        </property>
-        <property name="font">
-         <font>
-          <family>Comic Sans MS</family>
-          <pointsize>12</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-	border-radius: 10px;
-	background: rgb(255, 0, 4)
-}
-
-QPushButton:pressed {
-	background:rgb(0, 203, 14);
-	
-}</string>
-        </property>
-        <property name="text">
-         <string>Reset settings</string>
         </property>
        </widget>
       </item>
@@ -3258,6 +3210,17 @@ QComboBox::down-arrow {
 QComboBox:focus {
 	border-radius: 10px;
 	border: 2px solid rgb(255, 166, 23);
+}
+
+QComboBox QAbstractItemView {
+    selection-background-color: #75a7ff;
+    selection-color: white;
+    border: 1px solid black;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #75a7ff;
+    color: black;
 }</string>
      </property>
      <item>
@@ -4196,6 +4159,17 @@ QComboBox::down-arrow {
 QComboBox:focus {
 	border-radius: 10px;
 	border: 2px solid rgb(255, 166, 23);
+}
+
+QComboBox QAbstractItemView {
+    selection-background-color: #75a7ff;
+    selection-color: white;
+    border: 1px solid black;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #75a7ff;
+    color: black;
 }</string>
      </property>
      <item>
@@ -4323,6 +4297,17 @@ QComboBox::down-arrow {
 QComboBox:focus {
 	border-radius: 10px;
 	border: 2px solid rgb(255, 166, 23);
+}
+
+QComboBox QAbstractItemView {
+    selection-background-color: #75a7ff;
+    selection-color: white;
+    border: 1px solid black;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #75a7ff;
+    color: black;
 }</string>
      </property>
      <item>
@@ -4857,6 +4842,17 @@ QComboBox::down-arrow {
 QComboBox:focus {
 	border-radius: 10px;
 	border: 2px solid rgb(255, 166, 23);
+}
+
+QComboBox QAbstractItemView {
+    selection-background-color: #75a7ff;
+    selection-color: white;
+    border: 1px solid black;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #75a7ff;
+    color: black;
 }</string>
      </property>
      <item>
@@ -5773,6 +5769,39 @@ QLineEdit:focus {
        <pointsize>15</pointsize>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QTableView {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    gridline-color: #ddd;
+}
+
+QTableView::item {
+    border: none;
+    padding: 5px;
+}
+
+QTableView::item:selected {
+    background-color: #75a7ff;
+    color: white;
+    border-radius: 5px;
+}
+
+QHeaderView::section {
+    background-color: #eaeaea;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+QTableCornerButton::section {
+    background-color: #eaeaea;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}</string>
+     </property>
      <property name="editTriggers">
       <set>QAbstractItemView::NoEditTriggers</set>
      </property>
@@ -5880,6 +5909,17 @@ QComboBox::down-arrow {
 QComboBox:focus {
 	border-radius: 10px;
 	border: 2px solid rgb(255, 166, 23);
+}
+
+QComboBox QAbstractItemView {
+    selection-background-color: #75a7ff;
+    selection-color: white;
+    border: 1px solid black;
+}
+
+QComboBox QAbstractItemView::item:hover {
+    background-color: #75a7ff;
+    color: black;
 }</string>
      </property>
      <item>
